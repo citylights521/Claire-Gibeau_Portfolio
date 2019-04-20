@@ -1,88 +1,151 @@
 /* CSS */
 
-#header {
-    font-family: 'Dawning of a New Day', cursive;
-    font-size: 100px;
-    padding-top: 25px; 
-    text-align: center; 
+
+
+.myName {
+  font-family: 'Dawning of a New Day', cursive;
+  font-size: 100px;
+  padding-top: 90px;
+  text-align: center;
+
+}
+
+/* changes whole name and title object */
+.myName span {
+  background-color: rgba(193, 66, 66, 0.15); 
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.myTitle {
+  font-family: 'Didact Gothic', sans-serif;
+  text-align: center;
+  font-size: 25px;
+  position: relative;
+  top: -30px;
+}
+
+.navbar {
+margin-top: 350px;
 }
 
 /* landing page */
+
 .text-box {
-    font-family: 'Dawning of a New Day', cursive;
-    font-size: 70px;
-    padding-top: 25px;
+  font-family: 'Dawning of a New Day', cursive;
+  font-size: 70px;
+  padding-top: 25px;
+  padding-left: 0%;
+  padding-right: 0%;
 }
 
 #clairePic {
-    width: 200px;
-    border-radius: 50%;
+  width: 200px;
+  border-radius: 50%;
 }
 
 .aboutMe {
-    font-family: 'Didact Gothic', sans-serif;
-    font-size: 25px;
-    margin-left: 200px;
-    margin-right: 200px;
-    padding: 20px;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 25px;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 /* section 1 */
+
 .parallax1 {
-    /* The image used */
-    background-image: url("../assets/black-business-computer-296116.jpg");
-  
-    /* Set a specific height */
-    min-height: 800px; 
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  /* The image used */
+  background-image: url("../assets/black-business-computer-296116.jpg");
+  /* Set a specific height */
+  min-height: 800px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-  /* section 2 */
-  .parallax2 {
-    /* The image used */
-    background-image: url("../assets/woman\ on\ computer.jpg");
-  
-    /* Set a specific height */
-    min-height: 500px; 
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+}
 
-  /* section 3 */
-  .parallax3 {
-    /* The image used */
-    background-image: url("../assets/adventure-balance-balanced-7640.jpg");
-  
-    /* Set a specific height */
-    min-height: 500px; 
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+/* section 2 */
 
-    /* section 4 */
-    .parallax4 {
-        /* The image used */
-        background-image: url("../assets/agenda-concept-development-7376.jpg");
-      
-        /* Set a specific height */
-        min-height: 500px; 
-      
-        /* Create the parallax scrolling effect */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
+.parallax2 {
+  /* The image used */
+  background-image: url("../assets/woman\ on\ computer.jpg");
+  /* Set a specific height */
+  min-height: 800px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.programmingTitle {
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 25px;
+  padding-right: 0%;
+}
+
+.text-box-programming {
+  font-family: 'Dawning of a New Day', cursive;
+  font-size: 70px;
+  padding-top: 100px;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+.programmingExamples {
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 25px;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+.programming {
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 25px;
+}
+
+
+/* section 3 */
+
+.parallax3 {
+  /* The image used */
+  background-image: url("../assets/agenda-concept-development-7376.jpg");
+  /* Set a specific height */
+  min-height: 500px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pm {
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 25px;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 20px;
+}
+/* section 4 */
+
+.parallax4 {
+  /* The image used */
+  background-image: url("../assets/adventure-balance-balanced-7640.jpg");
+  /* Set a specific height */
+  min-height: 500px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact {
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 25px;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 20px;
+}
