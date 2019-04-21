@@ -31,27 +31,38 @@ $(document).ready(function() {
 
         for (var id in parallaxElements) {
             parallaxElements[id].initialOffsetY = $(parallaxElements[id].elm).offset().top;
-            parallaxElements[id].height = $(parallaxElements[id].elm).height();
+            parallaxElements[id].height = parallaxElements[id].initialOffsetY + $(parallaxElements[id].elm).outerHeight();
         }
     });
 
 
     // get parallax elements straight away as they wont change
     // this will minimise DOM interactions on scroll events
-    $('.parallax').each(function(){
+    $('.testScroll').each(function(){
 
-        $elm = $(this);
+        var $elm = $(this);
         var id = $elm.data('id');
+
+        var floater = $elm.data('floatid');
+
+        if (!floater) {
+            return;
+        }
+
+
+        var floaterElm = $("#" + floater);
+
+        if (!floaterElm) {
+            return;
+        }
 
         // use data-id as key
         parallaxElements[id] = {
             id: $elm.data('id'),
-            start: $elm.data('start'),
-            stop: $elm.data('stop'),
-            speed: $elm.data('speed'),
+            floater: floaterElm,
             elm: $elm[0],
             initialOffsetY: $elm.offset().top,
-            height: $elm.height(),
+            height: $elm.offset().top + $elm.outerHeight(),
             width: $elm.outerWidth()
         };
 
@@ -67,50 +78,38 @@ function parallax(scrollTop) {
 
     for (var id in parallaxElements) {
 
-        // distance of element from top of viewport
-        var viewportOffsetTop = parallaxElements[id].initialOffsetY - scrollTop;
+        var element = parallaxElements[id];
+        var elementTop = element.initialOffsetY;
+        var elementBottom = element.height;
 
-        // distance of element from bottom of viewport
-        var viewportOffsetBottom = windowHeight - viewportOffsetTop;
+        var viewportTop = scrollTop;
+        var viewportBottom = viewportTop + windowHeight;
 
-        if ((viewportOffsetBottom >= parallaxElements[id].start) 
-        && (viewportOffsetBottom <= parallaxElements[id].stop)
-        ){
-            // element is now active, fix the position so when we scroll it stays fixed
+        var floaterTop = viewportTop - elementTop;
 
-            var speedMultiplier = parallaxElements[id].speed || 1;
-            var pos = (windowHeight - parallaxElements[id].start);
+        //console.log("Test");
 
-            $(parallaxElements[id].elm)
-                .css({
-                    position: 'fixed',
-                    top: 50 +'px',
-                    left: '50%',
-                    marginLeft: -(parallaxElements[id].width/2) +'px'
-                });
-
-        } else if (viewportOffsetBottom > parallaxElements[id].stop) {
-            // scrolled past the stop value, make position relative again
-
-            $(parallaxElements[id].elm)
-                .css({
-                    position: 'relative',
-                    top: (parallaxElements[id].stop-parallaxElements[id].start)+'px',
-                    left: 'auto',
-                    marginLeft: 'auto'
-                });
-
-        } else if (viewportOffsetBottom < parallaxElements[id].start) {
-            // scrolled up back past the start value, reset position
-
-            $(parallaxElements[id].elm)
-                .css({
-                    position: 'relative',
-                    top: 0,
-                    left: 'auto',
-                    marginLeft: 'auto'
-                });
-
+        // lets check to see if the elements top is in the viewport
+        if (elementTop > viewportTop) {
+            element.floater.css(
+                {                    
+                    top: 0
+                }
+            );
+        }
+        else if (elementTop <= viewportTop && elementBottom > viewportBottom) {
+            element.floater.css(
+                {                    
+                    top: floaterTop
+                }
+            );
+        }
+        else if (elementBottom <= viewportBottom) {
+            element.floater.css(
+                {                    
+                    bottom: 0
+                }
+            );
         }
     }
 }
