@@ -1,4 +1,4 @@
-var parallaxElements = [];
+var scrollElements = [];
 var windowHeight = 0;
 
 $(document).ready(function() {
@@ -15,30 +15,30 @@ $(document).ready(function() {
         $(window)
             .bind('touchmove', function(e) {
                 var val = e.currentTarget.scrollY;
-                parallax(val);
+                updateFloaters(val);
             });
     }
 
     $(window)
         .bind('scroll', function(e) {
             var val = $(this).scrollTop();
-            parallax(val);
+            updateFloaters(val);
         });
 
     // update vars used in parallax calculations on window resize
     $(window).resize(function() {
         windowHeight = $(this).height();
 
-        for (var id in parallaxElements) {
-            parallaxElements[id].initialOffsetY = $(parallaxElements[id].elm).offset().top;
-            parallaxElements[id].height = parallaxElements[id].initialOffsetY + $(parallaxElements[id].elm).outerHeight();
+        for (var id in scrollElements) {
+            scrollElements[id].initialOffsetY = $(scrollElements[id].elm).offset().top;
+            scrollElements[id].height = scrollElements[id].initialOffsetY + $(scrollElements[id].elm).outerHeight();
+            scrollElements[id].floater.height(windowHeight);
         }
+
+        updateFloaters($(this).scrollTop());
     });
 
-
-    // get parallax elements straight away as they wont change
-    // this will minimise DOM interactions on scroll events
-    $('.testScroll').each(function(){
+    $('.scroller').each(function(){
 
         var $elm = $(this);
         var id = $elm.data('id');
@@ -56,8 +56,10 @@ $(document).ready(function() {
             return;
         }
 
+        floaterElm.height(windowHeight);
+
         // use data-id as key
-        parallaxElements[id] = {
+        scrollElements[id] = {
             id: $elm.data('id'),
             floater: floaterElm,
             elm: $elm[0],
@@ -69,48 +71,31 @@ $(document).ready(function() {
     });
 });
 
+function updateFloaters(scrollTop) {
 
-//////////////////////////
-/////parallax scroll/////
-////////////////////////
+    for (var id in scrollElements) {
 
-function parallax(scrollTop) {
-
-    for (var id in parallaxElements) {
-
-        var element = parallaxElements[id];
+        var element = scrollElements[id];
         var elementTop = element.initialOffsetY;
         var elementBottom = element.height;
 
         var viewportTop = scrollTop;
         var viewportBottom = viewportTop + windowHeight;
 
-        var floaterTop = viewportTop - elementTop;
+        var floaterTop = 0;
 
-        //console.log("Test");
-
-        // lets check to see if the elements top is in the viewport
-        if (elementTop > viewportTop) {
-            element.floater.css(
-                {                    
-                    top: 0
-                }
-            );
-        }
-        else if (elementTop <= viewportTop && elementBottom > viewportBottom) {
-            element.floater.css(
-                {                    
-                    top: floaterTop
-                }
-            );
+        if (elementTop <= viewportTop && elementBottom > viewportBottom) {
+            floaterTop = viewportTop - elementTop;
         }
         else if (elementBottom <= viewportBottom) {
-            element.floater.css(
-                {                    
-                    bottom: 0
-                }
-            );
+            floaterTop = (elementBottom - windowHeight) - elementTop;
         }
+
+        element.floater.css(
+            {                    
+                top: floaterTop
+            }
+        );
     }
 }
 
