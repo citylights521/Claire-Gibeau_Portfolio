@@ -72,7 +72,7 @@ margin-top: 350px;
   /* The image used */
   background-image: url("../assets/woman\ on\ computer.jpg");
   /* Set a specific height */
-  min-height: 800px;
+  min-height: 600px;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -89,16 +89,30 @@ margin-top: 350px;
 .text-box-programming {
   font-family: 'Dawning of a New Day', cursive;
   font-size: 70px;
-  padding-top: 100px;
+  padding-top: 230px;
   padding-left: 0%;
   padding-right: 0%;
 }
 
 .programmingExamples {
-  font-family: 'Didact Gothic', sans-serif;
-  font-size: 25px;
-  padding-left: 0%;
-  padding-right: 0%;
+  /* Hangman Game */
+  /* background-image: url("../assets/programming/Hangman.PNG"); */
+  padding: 0%;
+  background-position: top;
+  background-repeat: no-repeat; 
+
+
+   /* Smoothie Shop */
+   /* background-image: url("../assets/programming/smoothieshop.PNG");
+   padding: 0%;
+   background-position: top;
+   background-repeat: no-repeat; */
+}
+
+.programmingExamples ul, li, img, div {
+  padding: 0%;
+  list-style: none;
+
 }
 
 .programming {
