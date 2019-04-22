@@ -183,3 +183,14 @@ margin-top: 350px;
   margin-right: 200px;
   padding: 20px;
 }
+
+.linkedin-image {
+  width: 25px;
+  height: 25px;
+}
+
+.linkedin-image, .github-image2 {
+  width: 33px;
+  height: 33px;
+  position: relative;
+}
