@@ -93,6 +93,11 @@ margin-top: 350px;
   padding-right: 0%;
 }
 
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 .programmingExamples {
   /* Hangman Game */
   /* background-image: url("../assets/programming/Hangman.PNG"); */
@@ -176,11 +181,13 @@ margin-top: 350px;
   background-size: cover;
 }
 
+.contactTitle {
+  text-align: center;
+}
+
 .contact {
   font-family: 'Didact Gothic', sans-serif;
   font-size: 25px;
-  margin-left: 200px;
-  margin-right: 200px;
   padding: 20px;
 }
 
