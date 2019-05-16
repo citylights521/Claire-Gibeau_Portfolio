@@ -1,6 +1,9 @@
 /* CSS */
 
-
+/* allows for anchors to scroll instead of jump to section */
+html {
+  scroll-behavior: smooth;
+}
 
 .myName {
   font-family: 'Dawning of a New Day', cursive;
@@ -67,6 +70,7 @@
 
 /* section 1 */
 
+/* computer and phone pic */
 .parallax1 {
   /* The image used */
   background-image: url("../assets/black-business-computer-296116.jpg");
@@ -80,7 +84,7 @@
  }
 
 /* section 2 */
-
+/* woman on computer photo */
 .parallax2 {
   /* The image used */
   background-image: url("../assets/woman\ on\ computer.jpg");
@@ -161,7 +165,7 @@
 
 
 /* section 3 */
-
+/* whiteboard photo */
 .parallax3 {
   /* The image used */
   background-image: url("../assets/agenda-concept-development-7376.jpg");
@@ -182,7 +186,7 @@
   padding: 20px;
 }
 /* section 4 */
-
+/* nature photo */
 .parallax4 {
   /* The image used */
   background-image: url("../assets/adventure-balance-balanced-7640.jpg");
