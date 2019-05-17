@@ -29,20 +29,21 @@ html {
 }
 
 .navbar {
-  margin-top: 350px;
-}
-
-#navbarNav {
+  margin-top:350px;
   font-size: 25px;
   font-family: 'Didact Gothic', sans-serif;
+  justify-content: center;
+}
+
+.navbar div {
   justify-content: center;
 }
 
 .landingNavBar {
   background-color: rgba(239, 182, 182, 0.356); 
   border-radius: 25px;
-  margin-left: 470px;
-  margin-right: 470px;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 /* landing page */
 
@@ -64,8 +65,8 @@ html {
 .aboutMe {
   font-family: 'Didact Gothic', sans-serif;
   font-size: 25px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 /* section 1 */
@@ -100,13 +101,12 @@ html {
 .programmingTitle {
   font-family: 'Didact Gothic', sans-serif;
   font-size: 25px;
-  padding-right: 0%;
 }
 
 .text-box-programming {
   font-family: 'Dawning of a New Day', cursive;
   font-size: 70px;
-  padding-top: 230px;
+  padding-top: 30%;
   padding-left: 0%;
   padding-right: 0%;
 }
@@ -246,5 +246,28 @@ html {
   .landingNavBar {
     margin-left: 0%;
     margin-right: 0%;
+  }
+
+  .myName {
+    font-size: 50px;
+  }
+
+  .myTitle {
+    padding-top: 10px;
+    font-size: 15px;
+  }
+
+  .centerImage {
+    block-size: 0%;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .slash {
+    display: none;
+  }
+
+  .nav-item {
+    text-align: center;
   }
 }

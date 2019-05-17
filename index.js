@@ -4,6 +4,11 @@ var windowHeight = 0;
 $(document).ready(function() {
 
     windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    if (windowWidth < 992) {
+        windowHeight = windowHeight / 2;
+    }
+
     $('html,body').scrollTop(1); // auto scroll to top
 
     var touchSupported = (('ontouchstart' in window) ||
@@ -28,6 +33,13 @@ $(document).ready(function() {
     // update vars used in parallax calculations on window resize
     $(window).resize(function() {
         windowHeight = $(this).height();
+
+        var windowWidth = $(this).width();
+
+        if (windowWidth < 992) {
+            windowHeight = windowHeight / 2;
+        }
+
 
         for (var id in scrollElements) {
             scrollElements[id].initialOffsetY = $(scrollElements[id].elm).offset().top;
