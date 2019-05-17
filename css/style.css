@@ -270,4 +270,8 @@ html {
   .nav-item {
     text-align: center;
   }
+
+  .text-box-programming {
+    padding-top: 5%;
+  }
 }
