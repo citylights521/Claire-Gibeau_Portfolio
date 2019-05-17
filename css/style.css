@@ -114,6 +114,7 @@ html {
 .row {
   margin-left: 0px;
   margin-right: 0px;
+  width: 100%;
 }
 
 .programmingExamples {
@@ -221,4 +222,29 @@ html {
   width: 33px;
   height: 33px;
   position: relative;
+}
+
+/*media query*/
+
+@media only screen and (max-width: 1040px) {
+ .landingNavBar {
+   margin-left: 10%;
+   margin-right: 10%;
+ }
+}
+
+@media only screen and (max-width: 980px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+
+}
+
+@media only screen and (max-width: 640px) {
+  .landingNavBar {
+    margin-left: 0%;
+    margin-right: 0%;
+  }
 }
