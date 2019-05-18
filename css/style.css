@@ -213,12 +213,7 @@ html {
 
 }
 
-.linkedin-image {
-  width: 25px;
-  height: 25px;
-}
-
-.linkedin-image, .github-image2 {
+.linkedin-image, .github-image2, .resume-image {
   width: 33px;
   height: 33px;
   position: relative;
@@ -260,6 +255,10 @@ html {
 
   .centerImage {
     block-size: 0%;
+  }
+
+  .link-image, .github-image {
+    top: 80%;
   }
 }
 
