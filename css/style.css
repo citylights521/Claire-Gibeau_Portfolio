@@ -69,6 +69,17 @@ html {
   margin-right: 10%;
 }
 
+.parallax {
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
 /* section 1 */
 
 /* computer and phone pic */
@@ -77,11 +88,6 @@ html {
   background-image: url("../assets/black-business-computer-296116.jpg");
   /* Set a specific height */
   min-height: 900px;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
  }
 
 /* section 2 */
@@ -91,11 +97,6 @@ html {
   background-image: url("../assets/woman\ on\ computer.jpg");
   /* Set a specific height */
   min-height: 500px;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .programmingTitle {
@@ -172,11 +173,6 @@ html {
   background-image: url("../assets/agenda-concept-development-7376.jpg");
   /* Set a specific height */
   min-height: 500px;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .pm {
@@ -193,11 +189,6 @@ html {
   background-image: url("../assets/adventure-balance-balanced-7640.jpg");
   /* Set a specific height */
   min-height: 500px;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .contactTitle {
