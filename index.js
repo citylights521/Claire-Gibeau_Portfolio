@@ -53,11 +53,6 @@ $(document).ready(function() {
         updateFloaters($(this).scrollTop());
     });
 
-    $('.parallax').each(function() {
-        var $elm = $(this);
-        $elm.height(windowHeight);
-    });
-
     $('.scroller').each(function(){
 
         var $elm = $(this);
