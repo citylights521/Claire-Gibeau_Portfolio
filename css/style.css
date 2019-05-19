@@ -29,7 +29,7 @@ html {
 }
 
 .navbar {
-  margin-top:350px;
+  margin-top:10%;
   font-size: 25px;
   font-family: 'Didact Gothic', sans-serif;
   justify-content: center;
@@ -44,6 +44,7 @@ html {
   border-radius: 25px;
   margin-left: 25%;
   margin-right: 25%;
+  margin-top:350px;
 }
 /* landing page */
 
@@ -78,7 +79,6 @@ html {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  height: 100vh;
 }
 
 /* section 1 */
@@ -265,5 +265,9 @@ html {
 
   .text-box-programming {
     padding-top: 5%;
+  }
+
+  .parallax {
+    height: 500px;
   }
 }
