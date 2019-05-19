@@ -78,6 +78,7 @@ html {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  height: 100vh;
 }
 
 /* section 1 */
