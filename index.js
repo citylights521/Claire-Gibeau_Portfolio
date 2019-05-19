@@ -1,12 +1,15 @@
 var scrollElements = [];
+var windowHeightFloater = 0;
 var windowHeight = 0;
+
 
 $(document).ready(function() {
 
-    windowHeight = $(window).height();
+    windowHeightFloater = $(window).height();
+    windowHeight = windowHeightFloater;
     var windowWidth = $(window).width();
     if (windowWidth < 992) {
-        windowHeight = windowHeight / 2;
+        windowHeightFloater = windowHeightFloater / 2;
     }
 
     $('html,body').scrollTop(1); // auto scroll to top
@@ -32,22 +35,27 @@ $(document).ready(function() {
 
     // update vars used in parallax calculations on window resize
     $(window).resize(function() {
-        windowHeight = $(this).height();
-
+        windowHeightFloater = $(this).height();
+        windowHeight = windowHeightFloater;
         var windowWidth = $(this).width();
 
         if (windowWidth < 992) {
-            windowHeight = windowHeight / 2;
+            windowHeightFloater = windowHeightFloater / 2;
         }
 
 
         for (var id in scrollElements) {
             scrollElements[id].initialOffsetY = $(scrollElements[id].elm).offset().top;
             scrollElements[id].height = scrollElements[id].initialOffsetY + $(scrollElements[id].elm).outerHeight();
-            scrollElements[id].floater.height(windowHeight);
+            scrollElements[id].floater.height(windowHeightFloater);
         }
 
         updateFloaters($(this).scrollTop());
+    });
+
+    $('.parallax').each(function() {
+        var $elm = $(this);
+        $elm.height(windowHeight);
     });
 
     $('.scroller').each(function(){
@@ -68,7 +76,7 @@ $(document).ready(function() {
             return;
         }
 
-        floaterElm.height(windowHeight);
+        floaterElm.height(windowHeightFloater);
 
         // use data-id as key
         scrollElements[id] = {
@@ -92,7 +100,7 @@ function updateFloaters(scrollTop) {
         var elementBottom = element.height;
 
         var viewportTop = scrollTop;
-        var viewportBottom = viewportTop + windowHeight;
+        var viewportBottom = viewportTop + windowHeightFloater;
 
         var floaterTop = 0;
 
@@ -100,7 +108,7 @@ function updateFloaters(scrollTop) {
             floaterTop = viewportTop - elementTop;
         }
         else if (elementBottom <= viewportBottom) {
-            floaterTop = (elementBottom - windowHeight) - elementTop;
+            floaterTop = (elementBottom - windowHeightFloater) - elementTop;
         }
 
         element.floater.css(
