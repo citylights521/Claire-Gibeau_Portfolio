@@ -221,7 +221,9 @@ html {
 }
 
 @media only screen and (max-width: 980px) {
-
+  .parallax {
+    background-attachment:scroll;
+  }
 }
 
 @media only screen and (max-width: 768px) {
